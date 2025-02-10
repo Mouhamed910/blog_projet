@@ -1,0 +1,29 @@
+<h1> Post numéro :{{ post.id }}</h1>
+<a href="{% url 'post_list' %}"><button>Retour</button></a>
+<h2>Titre de la page:{{ post.title }}</h2>
+<h2>contenu de la page:{{ post.content }}</h2>
+<h2>Date de la page:{{ post.created_at }}</h2>
+<!-- Navbar -->
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Articles Section -->
+<div class="articles">
+    {% for article in articles %}
+    <div class="card">
+        <h2>{{ post_detail.title }}</h2>
+        <p>{{ post.content|truncatewords:20 }}</p>
+        <a href="{% url 'post_detail' post.id %}">Read More</a>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Blog. All rights reserved.</p>
+</footer>
