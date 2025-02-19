@@ -18,5 +18,8 @@ def post_detail(request,id):
 def index(request):
     return render(request, 'blog/index.html')
 
+def blog(request):
+    return render(request, 'blog/blog.html')
+
 
 # Create your views here.
